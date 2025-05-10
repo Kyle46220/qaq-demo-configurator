@@ -81,14 +81,14 @@ export default function Home() {
   };
 
   return (
-    <Card className="m-4 shadow-lg">
+    <Card className="my-4 md:mx-4 shadow-lg">
       <CardHeader>
         <CardTitle>Screen Configurator</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="flex h-[80vh]">
+        <div className="flex flex-col md:flex-row md:items-center h-auto md:h-[80vh]">
           {/* Controls Panel */}
-          <div className="w-72 pr-4 overflow-y-auto">
+          <div className="w-full md:w-72 md:min-w-72 pr-0 md:pr-4 mb-4 md:mb-0 md:max-h-full md:overflow-y-auto order-2 md:order-none">
             {/* Width */}
             <div className="mb-4">
               <label className="block text-sm font-medium mb-1">Width: {snap.screen_width} mm</label>
@@ -185,7 +185,7 @@ export default function Home() {
             </div>
           </div>
           {/* 3D Preview */}
-          <div className="flex-1">
+          <div className="w-full md:flex-1 h-[50vh] md:h-full order-1 md:order-none">
             <Canvas camera={{ position: [0, 0, 1.5] }}>
               <ambientLight intensity={0.5} />
               <directionalLight position={[1, 1, 1]} />
